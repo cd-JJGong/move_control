@@ -1,2 +1,5 @@
 # move_control
- 
+1、定义了move_control类和singleship类，move_control类中包含了两个singleship，表示前后两个单片机。
+2、move_control初始化了每个run_target的距离和方向，距离要根据实际调（改代码）
+3、move_control初始化了速度环，具体要根据实际调。
+4、move_control中定义了setPos函数，传入距离和方向，即可自动设置轮子的位置环，这里还需要根据实际情况修改位置环与实际距离的变换关系。
