@@ -27,6 +27,7 @@ public:
 	void setPos(float distance, int direction);
 	move_control();
 	int run_target_size;	//运动段数
+	float Centimeter_per_ring;	//每一环的距离
 	float* distance;
 	int* direction;
 };
@@ -37,9 +38,11 @@ move_control::move_control() {
 	direction = new int[run_target_size] {3, 1, 4, 1, 2, -1, 1};	//用1，2，3，4，-1， -2表示前后左右方向和顺时针、逆时针旋转90°,规定机械臂方向为初始前方
 	this->front.setSpd(1, 1);	//速度环默认1，根据实际调
 	this->back.setSpd(1, 1);
+	this->Centimeter_per_ring = 1;	//每一环的距离默认为1
 }
 
 void move_control::setPos(float distance, int direction) {
+	distance = distance / this->Centimeter_per_ring;	//根据距离换算环数
 	switch (direction)
 	{
 	case 1:
