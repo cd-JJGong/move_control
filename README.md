@@ -3,3 +3,5 @@
 2、move_control初始化了每个run_target的距离和方向，距离要根据实际调（改代码）
 3、move_control初始化了速度环，具体要根据实际调。
 4、move_control中定义了setPos函数，传入距离和方向，即可自动设置轮子的位置环，这里还需要根据实际情况修改位置环与实际距离的变换关系。
+修改版：
+在move_control.cpp中写了一个move_control函数，传入run_target，对记录位置环的全局变量进行修改，但目前未对速度环进行定义
